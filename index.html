@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Time-Based Webpage</title>
+
+  <!-- Internal CSS to style the page -->
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Set a clean font */
+      color: white; /* Text color */
+      text-align: center; /* Center all text on the page */
+      padding-top: 50px; /* Add spacing from the top */
+      transition: background-color 0.5s; /* Smooth background color transition */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page content: Name, course, major, and greeting -->
+  <h1>Chris Cocose</h1>
+  <h2>COP4813</h2>
+  <h3>Computer Science Major</h3>
+  <p>Welcome to my dynamic webpage! This is my page.</p>
+
+  <!-- JavaScript to change background color based on time -->
+  <script>
+    const hour = new Date().getHours(); // Get current hour (0–23)
+    let bgColor;
+
+    // Determine background color based on time of day
+    if (hour >= 6 && hour < 12) {
+      bgColor = "#FFD580"; // Morning (6am–12pm): light orange
+    } else if (hour >= 12 && hour < 18) {
+      bgColor = "#87CEFA"; // Afternoon (12pm–6pm): sky blue
+    } else if (hour >= 18 && hour < 21) {
+      bgColor = "#FFA07A"; // Evening (6pm–9pm): soft red/orange
+    } else {
+      bgColor = "#2F4F4F"; // Night (9pm–6am): dark slate gray
+    }
+
+    // Apply the background color to the page
+    document.body.style.backgroundColor = bgColor;
+  </script>
+
+</body>
+</html>
